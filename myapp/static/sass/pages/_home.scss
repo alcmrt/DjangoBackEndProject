@@ -1,0 +1,48 @@
+.graph {
+  display: block;
+  width: 80%;
+  text-align: center;
+
+  @media screen and (max-width: 60rem) {
+    width: 60%;
+    text-align: center;
+  }
+}
+
+.paragraph {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: Arial;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.icon-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+
+  &__icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+
+  display: inline-block;
+}
+
+.header {
+  //margin-top: 7vh;
+  border-radius: .5rem;
+  background-color: #f2f2f2;
+  padding: 2rem;
+  width: 100%;
+  height: 20%;
+  display: block;
+}
