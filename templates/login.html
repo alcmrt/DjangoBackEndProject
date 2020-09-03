@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+{{ "Oturum Aç" }}
+{% endblock %}
+{% block body_block %}
+    <div class="container">
+        {% if messages %}
+            <ul class="error">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <h1 class="container__header">Giriş Yap</h1>
+        <br>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="row">
+                <label for="username">Kullanıcı Adı:</label>
+                <input name="username" placeholder="Kullanıcı Adı" type="text" required maxlength="100">
+            </div>
+            <div class="row">
+                <label for="password">Şifre:</label>
+                <input name="password" placeholder="Şifre" type="password" required maxlength="16">
+            </div>
+            <br>
+            <div class="row">
+                <input type="submit" value="Giriş Yap">
+            </div>
+        </form>
+        <br><br>
+        <hr>
+        <br><br>
+        <div class="row">
+            <a id="register2" href="{% url 'register' %}">Kayıt Ol</a>
+        </div>
+    </div>
+{% endblock %}

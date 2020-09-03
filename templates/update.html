@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+{{ "Güncelle" }}
+{% endblock %}
+
+{% block body_block %}
+    <div class="container">
+        <h1 class="container__header">Düzenle</h1>
+        <br>
+        <div class="error">
+            {{ form.errors }}
+        </div>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                {{ form.as_p }}
+            </div>
+            <br>
+            <div class="row">
+                <input type="submit" value="Kaydet">
+            </div>
+            <br><br>
+            <div class="row">
+                <a id="cancel" href="{% url 'home' %}">Vazgeç</a>
+            </div>
+
+        </form>
+
+    </div>
+{% endblock %}

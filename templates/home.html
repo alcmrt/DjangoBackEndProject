@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ "Ana Sayfa" }}
+{% endblock %}
+
+{% block body_block %}
+    <div class="header">
+        <div class="row">
+            <div class="col-25">
+                <div class="icon-box-container">
+                    <div class="icon-box-container__icon-container">
+                        <svg class="icon">
+                            <use xlink:href="/static/img/sprite.svg#icon-home"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-50">
+                <h1 class="heading-primary">Hoşgeldiniz</h1>
+            </div>
+            <div class="col-25__right">
+                <p class="paragraph">{{ request.user.username }}</p>
+                <a id="register2" href="{% url 'update' user_pk%}">Profil</a>
+                <form action="{% url 'logout' %}" method="get" target="_blank">
+                    <button class="button-logout" type="submit">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class = "graph">
+        {{ graph|safe }}
+    </div>
+{% endblock %}

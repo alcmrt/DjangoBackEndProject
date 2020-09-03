@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+{{ "Kayıt Ol" }}
+{% endblock %}
+
+{% block body_block %}
+    <div class="container">
+        <h1 class="container__header">Kayıt Ol</h1>
+        <br>
+        <div class="error">
+            {{ form.errors }}
+        </div>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                {{ form.as_p }}
+            </div>
+            <br>
+            <div class="row">
+                <input type="submit" value="Kayıt Ol">
+            </div>
+        </form>
+    </div>
+{% endblock %}
