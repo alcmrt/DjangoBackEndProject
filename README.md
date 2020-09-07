@@ -39,3 +39,40 @@ bilgileri güncellenebilmektedir.
 Django web framework üzerinde daha önce authentication işlemlerinin nasıl yapıldığının bilinmemesi sebebiyle; 
 - oturum açma, login, logout, şifre güncelleme gibi işlemlerin gerçekleştirilmesi fazlaca zaman almıştır.
 - Ana sayfada olması istenen sol navigasyon menüsü gibi özellikler daha sonra projeye dahil edilecektir.
+
+## Uygulamanın Kurulması
+
+- Uygulama Jetbrain Pycharm IDE üzerinde geliştirlimiştir. Projenin kurulumu için Jetbrains'in aşağıdaki sitesindeki kurulum adımları izlenmiştir:
+[Create and Run your first Django project](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-django-project.html)
+
+### Django projesinin setup kısmı tamamandıktan sonra kullanılan kütüphaneler terminal üzerinden aşağıdaki komutlarla yüklenmiştir:
+
+- requests
+```shell
+$ pip install requests
+```
+- matplotlib
+```shell
+$ pip install matplotlib
+```
+- pandas
+```shell
+$ pip install pandas
+```
+- django-sass-processor  
+```shell
+$ pip install libsass django-compressor django-sass-processor
+```
+- numpy
+```shell
+$ pip install numpy
+```
+
+### kodları projeye aktardıktan sonra, komut satırından aşağıdaki komutlar sırasıyla çalıştırılarak proje localhost üzerinde test edilebilir:
+```shell
+$ python manage.py makemigrations
+
+$ python manage.py migrate
+
+$ python manage.py runserver
+```
